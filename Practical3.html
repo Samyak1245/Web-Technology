@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Practical 3 - CSS</title>
+
+    <link rel="stylesheet" href="style3.css">
+
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Verdana, Arial, sans-serif;
+        }
+
+        h1 {
+            color: maroon;
+            text-align: center;
+            font-family: Georgia, serif;
+        }
+
+        .highlight {
+            color: darkgreen;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        #special {
+            color: navy;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        a:link {
+            color: blue;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            color: red;
+            font-weight: bold;
+            cursor: crosshair;
+        }
+
+        a:active {
+            color: orange;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: lavender;">
+
+    <h1>CSS Demonstration Page</h1>
+
+    <p class="highlight">This is styled using a <b>Class Selector</b>.</p>
+    <p id="special">This is styled using an <b>ID Selector</b>.</p>
+    <p>This is a normal paragraph with default styling.</p>
+
+    <a href="https://www.google.com" target="_blank">Visit Google</a><br>
+    <a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a>
+
+</body>
+
+</html>
