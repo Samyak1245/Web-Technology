@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<TITLE>Golden Era of Bollywood XML Parsing</TITLE>
+<style>
+
+    body {
+
+        margin: 20px;
+        background: #ffffff;
+        color: #070000;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #000000;
+        padding: 10px 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #444;
+        color: #fff;
+    }
+
+    button {
+        padding: 5px 15px;
+        background-color: #0f49a0;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+</style>
+
+<script>
+function loadXMLDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            movDetails(this);
+        }
+    };
+    xhttp.open("GET", "movie_details.xml", true);
+    xhttp.send();
+}
+
+function movDetails(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;
+    var table="<tr><th>Title</th><th>Artist</th><th>Country</th><th>Price</th><th>Year</th></tr>";
+    var x = xmlDoc.getElementsByTagName("CD");
+    for (i = 0; i < x.length; i++) {
+        table += "<tr><td>" +
+        x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
+        "</td></tr>";
+    }
+    document.getElementById("demo").innerHTML = table;
+}
+</script>
+</head>
+
+<body>
+<h2>Golden Era of Bollywood</h2>
+<button type="button" onclick="loadXMLDoc()">View Details</button>
+<br><br>
+<table id="demo"></table>
+</body>
+</html>

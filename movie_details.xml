@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+  <CD>
+    <TITLE>Awaara</TITLE>
+    <ARTIST>Raj Kapoor</ARTIST>
+    <COUNTRY>India</COUNTRY>
+    <PRICE>₹0.50 crore</PRICE>
+    <YEAR>1951</YEAR>
+  </CD>
+  <CD>
+    <TITLE>Guide</TITLE>
+    <ARTIST>Vijay Anand</ARTIST>
+    <COUNTRY>India</COUNTRY>
+    <PRICE>₹0.75 crore</PRICE>
+    <YEAR>1965</YEAR>
+  </CD>
+  <CD>
+    <TITLE>Devdas</TITLE>
+    <ARTIST>Bimal Roy</ARTIST>
+    <COUNTRY>India</COUNTRY>
+    <PRICE>₹0.20 crore</PRICE>
+    <YEAR>1955</YEAR>
+  </CD>
+</CATALOG>
