@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Information</title>
+</head>
+<body>
+    <h1>Employee Information</h1>
+    <button onclick="getSecondEmployee()">Get Second Employee Info</button>
+
+    <div id="second-employee-info"></div>
+
+    <script>
+        function loadXML() {
+            return fetch('employeeInternal5.xml')
+                .then(response => response.text())
+                .then(str => {
+                    const parser = new DOMParser();
+                    return parser.parseFromString(str, "application/xml");
+                });
+        }
+
+        function getSecondEmployee() {
+            loadXML().then(xmlDoc => {
+                const employees = xmlDoc.getElementsByTagName("employee");
+                if (employees.length >= 2) {
+                    const second = employees[1];
+                    document.getElementById("second-employee-info").innerHTML = `
+                        <p><b>ID:</b> ${second.getElementsByTagName("id")[0].textContent}</p>
+                        <p><b>Name:</b> ${second.getElementsByTagName("name")[0].textContent}</p>
+                        <p><b>Department:</b> ${second.getElementsByTagName("department")[0].textContent}</p>
+                        <p><b>Designation:</b> ${second.getElementsByTagName("designation")[0].textContent}</p>
+                        <p><b>Email:</b> ${second.getElementsByTagName("email")[0].textContent}</p>
+                        <p><b>Salary:</b> ${second.getElementsByTagName("salary")[0].textContent}</p>
+                    `;
+                } else {
+                    alert("Not enough employees in the data.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
