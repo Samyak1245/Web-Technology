@@ -7,7 +7,7 @@
 ## 📘 About
 
 This repository is part of my **Web Technology Lab** coursework.  
-It contains all the **codes, exercises, and projects** that I have implemented throughout the semester while learning various aspects of web development — from basic HTML and CSS to dynamic web applications using JavaScript.
+It contains all the codes that I have implemented throughout the semester while learning various aspects of web development.
 
 ---
 
